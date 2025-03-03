@@ -1,0 +1,110 @@
+,Data Dictionary for listings.csv detailed file,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8
+0,,,,,,,,,
+1,File Name,listings.csv,,,,,,,
+2,Version,4.3,,,,,,,
+3,Date Introduced,2022-08-01 00:00:00,,,,,,,
+4,Description,,,,,,,,
+5,,,,,,,,,
+6,Field,Type,Calculated,Description,Reference,,,,
+7,id,integer,,Airbnb's unique identifier for the listing,,,,,
+8,listing_url,text,y,,,,last_scraped,datetime,"UTC. The date and time this listing was ""scraped""."
+9,scrape_id,bigint,y,"Inside Airbnb ""Scrape"" this was part of",,,host_since,date,The date the host/user was created. For hosts that are Airbnb guests this could be the date they registered as a guest.
+10,last_scraped,,y,,,,host_location,text,The host's self reported location
+11,source,text,,"One of ""neighbourhood search"" or ""previous scrape"". ""neighbourhood search"" means that the listing was found by searching the city, while ""previous scrape"" means that the listing was seen in another scrape performed in the last 65 days, and the listing was confirmed to be still available on the Airbnb site.",,,host_response_time,,
+12,name,text,,Name of the listing,,,host_response_rate,,
+13,description,text,,Detailed description of the listing,,,host_acceptance_rate,,That rate at which a host accepts booking requests.
+14,neighborhood_overview,text,,Host's description of the neighbourhood,,,host_is_superhost,boolean [t=true; f=false],
+15,picture_url,text,,URL to the Airbnb hosted regular sized image for the listing,,,host_neighbourhood,text,
+16,host_id,integer,,Airbnb's unique identifier for the host/user,,,host_listings_count,text,The number of listings the host has (per Airbnb unknown calculations)
+17,host_url,text,y,The Airbnb page for the host,,,host_total_listings_count,text,The number of listings the host has (per Airbnb unknown calculations)
+18,host_name,text,,Name of the host. Usually just the first name(s).,,,host_verifications,,
+19,host_since,,,,,,host_identity_verified,boolean [t=true; f=false],
+20,host_location,,,,,,neighbourhood,text,
+21,host_about,text,,Description about the host,,,neighbourhood_cleansed,text,
+22,host_response_time,,,,,,neighbourhood_group_cleansed,text,
+23,host_response_rate,,,,,,latitude,numeric,Uses the World Geodetic System (WGS84) projection for latitude and longitude.
+24,host_acceptance_rate,,,,,,longitude,numeric,Uses the World Geodetic System (WGS84) projection for latitude and longitude.
+25,host_is_superhost,,,,,,property_type,text,Self selected property type. Hotels and Bed and Breakfasts are described as such by their hosts in this field
+26,host_thumbnail_url,text,,,,,room_type,text,"[Entire home/apt|Private room|Shared room|Hotel]
+
+All homes are grouped into the following three room types:
+
+Entire place
+Private room
+Shared room
+Entire place
+Entire places are best if you're seeking a home away from home. With an entire place, you'll have the whole space to yourself. This usually includes a bedroom, a bathroom, a kitchen, and a separate, dedicated entrance. Hosts should note in the description if they'll be on the property or not (ex: ""Host occupies first floor of the home""), and provide further details on the listing.
+
+Private rooms
+Private rooms are great for when you prefer a little privacy, and still value a local connection. When you book a private room, you'll have your own private room for sleeping and may share some spaces with others. You might need to walk through indoor spaces that another host or guest may occupy to get to your room.
+
+Shared rooms
+Shared rooms are for when you don't mind sharing a space with others. When you book a shared room, you'll be sleeping in a space that is shared with others and share the entire space with other people. Shared rooms are popular among flexible travelers looking for new friends and budget-friendly stays."
+27,host_picture_url,text,,,,,accommodates,integer,The maximum capacity of the listing
+28,host_neighbourhood,,,,,,bathrooms,numeric,The number of bathrooms in the listing
+29,host_listings_count,,,,,,bedrooms,integer,The number of bedrooms
+30,host_total_listings_count,,,,,,beds,integer,The number of bed(s)
+31,host_verifications,,,,,,amenities,json,
+32,host_has_profile_pic,boolean [t=true; f=false],,,,,price,currency,"daily price in local currency.
+NOTE: the $ sign is a technical artifact of the export, please ignore it"
+33,host_identity_verified,,,,,,minimum_nights,integer,minimum number of night stay for the listing (calendar rules may be different)
+34,neighbourhood,,,,,,maximum_nights,integer,maximum number of night stay for the listing (calendar rules may be different)
+35,neighbourhood_cleansed,,y,The neighbourhood as geocoded using the latitude and longitude against neighborhoods as defined by open or public digital shapefiles.,,,minimum_minimum_nights,integer,the smallest minimum_night value from the calender (looking 365 nights in the future)
+36,neighbourhood_group_cleansed,,y,The neighbourhood group as geocoded using the latitude and longitude against neighborhoods as defined by open or public digital shapefiles.,,,maximum_minimum_nights,integer,the largest minimum_night value from the calender (looking 365 nights in the future)
+37,latitude,,,,,,minimum_maximum_nights,integer,the smallest maximum_night value from the calender (looking 365 nights in the future)
+38,longitude,,,,,,maximum_maximum_nights,integer,the largest maximum_night value from the calender (looking 365 nights in the future)
+39,property_type,,,,,,minimum_nights_avg_ntm,numeric,the average minimum_night value from the calender (looking 365 nights in the future)
+40,room_type,,,,https://www.airbnb.com/help/article/5/what-does-the-room-type-of-a-listing-mean,,maximum_nights_avg_ntm,numeric,the average maximum_night value from the calender (looking 365 nights in the future)
+41,accommodates,,,,,,calendar_updated,date,
+42,bathrooms,,,,,,has_availability,boolean,[t=true; f=false]
+43,bathrooms_text,string,,"The number of bathrooms in the listing. 
+On the Airbnb web-site, the bathrooms field has evolved from a number to a textual description. For older scrapes, bathrooms is used.",,,availability_30,integer,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.
+44,bedrooms,,,,,,availability_60,integer,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.
+45,beds,,,,,,availability_90,integer,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.
+46,amenities,,,,,,calendar_last_scraped,date,
+47,price,,,,,,number_of_reviews,integer,The number of reviews the listing has
+48,minimum_nights,,,,,,number_of_reviews_ltm,integer,The number of reviews the listing has (in the last 12 months)
+49,maximum_nights,,,,,,number_of_reviews_l30d,integer,The number of reviews the listing has (in the last 30 days)
+50,minimum_minimum_nights,,y,,,,first_review,date,The date of the first/oldest review
+51,maximum_minimum_nights,,y,,,,last_review,date,The date of the last/newest review
+52,minimum_maximum_nights,,y,,,,review_scores_rating,,
+53,maximum_maximum_nights,,y,,,,review_scores_accuracy,,
+54,minimum_nights_avg_ntm,,y,,,,review_scores_checkin,,
+55,maximum_nights_avg_ntm,,y,,,,review_scores_communication,,
+56,calendar_updated,,,,,,review_scores_location,,
+57,has_availability,,,,,,review_scores_value,,
+58,availability_30,,y,,,,,,
+59,availability_60,,y,,,,,,
+60,availability_90,,y,,,,,,
+61,availability_365,integer,y,avaliability_x. The availability of the listing x days in the future as determined by the calendar. Note a listing may not be available because it has been booked by a guest or blocked by the host.,,,,,
+62,calendar_last_scraped,,,,,,,,
+63,number_of_reviews,,,,,,,,
+64,number_of_reviews_ltm,,y,,,,,,
+65,number_of_reviews_l30d,,y,,,,,,
+66,first_review,,y,,,,,,
+67,last_review,,y,,,,,,
+68,review_scores_rating,,,,,,,,
+69,review_scores_accuracy,,,,,,,,
+70,review_scores_cleanliness,,,,,,,,
+71,review_scores_checkin,,,,,,,,
+72,review_scores_communication,,,,,,,,
+73,review_scores_location,,,,,,,,
+74,review_scores_value,,,,,,,,
+75,license,text,,The licence/permit/registration number,,,,,
+76,instant_bookable,boolean,,[t=true; f=false]. Whether the guest can automatically book the listing without the host requiring to accept their booking request. An indicator of a commercial listing.,,,,,
+77,calculated_host_listings_count,integer,y,"The number of listings the host has in the current scrape, in the city/region geography.",,,,,
+78,calculated_host_listings_count_entire_homes,integer,y,"The number of Entire home/apt listings the host has in the current scrape, in the city/region geography",,,,,
+79,calculated_host_listings_count_private_rooms,integer,y,"The number of Private room listings the host has in the current scrape, in the city/region geography",,,,,
+80,calculated_host_listings_count_shared_rooms,integer,y,"The number of Shared room listings the host has in the current scrape, in the city/region geography",,,,,
+81,reviews_per_month,numeric,y,"The average number of reviews per month the listing has over the lifetime of the listing.
+
+Psuedocoe/~SQL:
+
+IF scrape_date - first_review <= 30 THEN number_of_reviews
+ELSE number_of_reviews / ((scrape_date - first_review + 1) / (365/12))
+
+",,,,,
+82,,,,,,,,,
+83,Change control,,,,,,,,
+84,Field,Change,,,,,,,
+85,source,Added,,,,,,,
